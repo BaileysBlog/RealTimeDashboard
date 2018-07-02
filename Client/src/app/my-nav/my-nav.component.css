@@ -3,10 +3,15 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 300px;
 }
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
+}
+
+.active-route
+{
+  font-weight: bold;
 }

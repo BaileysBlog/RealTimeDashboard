@@ -9,12 +9,14 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MyNavComponent } from './my-nav/my-nav.component';
+import { CpuUsagePreviewComponent } from './ComponentPreviews/cpu-usage-preview/cpu-usage-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StatisticsComponent,
-    MyNavComponent
+    MyNavComponent,
+    CpuUsagePreviewComponent
   ],
   imports: [
     BrowserModule,
