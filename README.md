@@ -5,6 +5,25 @@ Dashboard Screen:
 - Server CPU usage on graph
 - Server Memory usage on graph
 - Number of connected WebSockets
--- Number of other people also watching the statistics
+    - Number of other people also watching the statistics
 - Size of the database being used to store this information
 - Potentially other information from the database
+
+## Current To-Do (General)
+- [ ] Angular Dashboard Page
+- [ ] Angular Service for retrieving SignalR messages
+- [ ] SignalR Server 
+### To-Do (Client Side)
+- [ ] Cpu Usage
+- [ ] Memory Usage
+- [ ] Number of connected clients
+- [ ] Database Information
+### To-Do (Server Side)
+- [ ] Retrieve Cpu Usage
+- [ ] Retrieve Memory Usage
+    - [ ] Max Allowed Ram 
+    - [ ] Current Ram usage
+- [ ] Database connection to store connected clients
+    - [ ] Methods of retrieving current client count
+- [ ] Retrieve information regarding database 
+    - [ ] Queries for returning information about database
