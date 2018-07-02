@@ -5,6 +5,11 @@ body
     margin: 0 0 0 0 !important;
 }
 
+.mat-drawer-container
+{
+    background-color: unset;
+}
+
 .unselectable
 {
     -webkit-touch-callout: none;

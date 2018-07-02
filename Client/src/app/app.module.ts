@@ -10,13 +10,15 @@ import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButt
 import { LayoutModule } from '@angular/cdk/layout';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { CpuUsagePreviewComponent } from './ComponentPreviews/cpu-usage-preview/cpu-usage-preview.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StatisticsComponent,
     MyNavComponent,
-    CpuUsagePreviewComponent
+    CpuUsagePreviewComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
