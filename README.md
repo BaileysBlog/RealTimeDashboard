@@ -9,6 +9,14 @@ Dashboard Screen:
 - Size of the database being used to store this information
 - Potentially other information from the database
 
+## Running Locally
+- Terminal A
+    1) cd Client
+    2) npm install & ng serve
+- Terminal B
+    1) cd Server\dashboardServer\dashboardServer
+    2) dotnet restore & dotnet run
+
 ## Current To-Do (General)
 - [x] Angular Dashboard Page
 - [ ] Angular Service for retrieving SignalR messages
