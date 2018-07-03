@@ -17,6 +17,7 @@ namespace dashboardServer
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            Program.ClearConnections().Wait();
         }
 
         public static IConfiguration Configuration { get; protected set; }

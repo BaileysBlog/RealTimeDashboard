@@ -15,6 +15,26 @@ namespace dashboardServer.Utils
             return new SqlConnection(Startup.Configuration.GetConnectionString("clients"));
         }
 
+        public static async Task ClearUsers()
+        {
+            using (var connection = GetConnection())
+            {
+                await connection.OpenAsync();
+                var query = $@"delete from Clients where 1=1";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        await command.ExecuteNonQueryAsync();
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
+        }
+
 
         public static async Task AddUser(String ConnectionId, String UserAgent)
         {
