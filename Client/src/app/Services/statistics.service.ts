@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HubConnection, HubConnectionBuilder } from "@aspnet/signalr";
 import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class StatisticsService
 
   public OnClientUpdate: Observable<number>;
 
-  constructor()
+  constructor(private http: HttpClient)
   {
 
     this.ConfigureEvents();
@@ -60,5 +61,11 @@ export class StatisticsService
   { 
     this.OnClientUpdate = this._ClientUpdate.asObservable();
   }
+
+  public GetClients(): Observable<any>
+  { 
+    return this.http.get('http://localhost:5000/api/client');
+  }
+
 
 }

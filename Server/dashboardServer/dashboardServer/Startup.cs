@@ -35,6 +35,7 @@ namespace dashboardServer
             }));
 
             services.AddSignalR();
+            
 
         }
 
@@ -46,13 +47,18 @@ namespace dashboardServer
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
 
             app.UseCors("CorsPolicy");
+
+            app.UseMvc();
+
+            
             app.UseSignalR(routes =>
             {
                 routes.MapHub<MainHub>("/main");
             });
+
+            
         }
     }
 }

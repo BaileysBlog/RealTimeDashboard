@@ -21,7 +21,7 @@ namespace dashboardServer.Utils
             using (var connection = GetConnection())
             {
                 await connection.OpenAsync();
-                var query = @"select * from Clients";
+                var query = @"select ConnectionId, UserAgent from Clients";
                 using (var command = new SqlCommand(query, connection))
                 {
                     var _data = new List<Client>();
@@ -30,7 +30,7 @@ namespace dashboardServer.Utils
 
                     while (await reader.ReadAsync())
                     {
-                        _data.Add(new Client(reader.GetString(1), reader.GetString(2), null));
+                        _data.Add(new Client(reader.GetString(0), reader.GetString(1), null));
                     }
                     
                     return _data;

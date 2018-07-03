@@ -13,6 +13,8 @@ import { CpuUsagePreviewComponent } from './ComponentPreviews/cpu-usage-preview/
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ClientListComponent } from './client-list/client-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { environment } from '../environments/environment';
     StatisticsComponent,
     MyNavComponent,
     CpuUsagePreviewComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ClientListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     MatGridListModule,
     MatCardModule,
