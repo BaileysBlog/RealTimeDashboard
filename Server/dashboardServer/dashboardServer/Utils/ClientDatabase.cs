@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using dashboardServer.Models;
+using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,29 @@ namespace dashboardServer.Utils
         private static SqlConnection GetConnection()
         {
             return new SqlConnection(Startup.Configuration.GetConnectionString("clients"));
+        }
+        
+        public static async Task<List<Client>> GetAllUsers()
+        {
+            using (var connection = GetConnection())
+            {
+                await connection.OpenAsync();
+                var query = @"select * from Clients";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    var _data = new List<Client>();
+
+                    var reader = await command.ExecuteReaderAsync();
+
+                    while (await reader.ReadAsync())
+                    {
+                        _data.Add(new Client(reader.GetString(1), reader.GetString(2), null));
+                    }
+                    
+                    return _data;
+
+                }
+            }
         }
 
         public static async Task ClearUsers()
