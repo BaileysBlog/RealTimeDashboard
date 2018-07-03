@@ -10,7 +10,7 @@ Dashboard Screen:
 - Potentially other information from the database
 
 ## Current To-Do (General)
-- [ ] Angular Dashboard Page
+- [x] Angular Dashboard Page
 - [ ] Angular Service for retrieving SignalR messages
 - [ ] SignalR Server 
 ### To-Do (Client Side)
