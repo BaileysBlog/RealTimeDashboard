@@ -6,11 +6,17 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="https://api.adorable.io/avatars/150">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body onload="GetFavIcon()">
   <app-root></app-root>
+  <script>
+  function GetFavIcon() {
+    var icon = (document.querySelector("link[rel*='icon']") || document.createElement('link'));
+    icon.href = `${icon.href}/${new Date().getTime()}`;
+  }
+  </script>
 </body>
 </html>
