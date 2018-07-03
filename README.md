@@ -16,6 +16,7 @@ My final idea is to create something that allows a connected user to see all oth
 - [x] Angular Dashboard Page
 - [x] Angular Service for retrieving SignalR messages
 - [x] SignalR Server 
+- [ ] Api Endpoints
 ### To-Do (Client Side)
 - [x] Number of connected clients
 - [ ] Ability to show all connected users in more detail
