@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StatisticsService } from '../../Services/statistics.service';
 
 @Component({
   selector: 'cpu-usage-preview',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CpuUsagePreviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public statsApi: StatisticsService) { }
 
   ngOnInit() {
   }
