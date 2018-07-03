@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { StatisticsService } from '../Services/statistics.service';
 
 @Component({
   selector: 'app-statistics',
@@ -19,5 +20,8 @@ export class StatisticsComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private statsApi: StatisticsService)
+  {
+    
+  }
 }
