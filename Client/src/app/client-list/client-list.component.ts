@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from '../Services/statistics.service';
 import { Client } from '../Models/client.model';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-client-list',
@@ -14,7 +14,7 @@ export class ClientListComponent implements OnInit {
 
   constructor(public statsApi: StatisticsService)
   {
-    this.statsApi.OnClientUpdate.pipe(switchMap(x => { return this.statsApi.GetClients() })).subscribe(x =>
+    this.statsApi.OnClientUpdate.pipe(debounceTime(250)).pipe(switchMap(x => { return this.statsApi.GetClients() })).subscribe(x =>
     {
       this.LoadClients(x);
     });
