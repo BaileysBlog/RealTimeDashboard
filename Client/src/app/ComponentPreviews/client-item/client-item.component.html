@@ -1,0 +1,8 @@
+<mat-list-item [ngSwitch]="GetIconName()">
+    <mat-icon *ngSwitchCase="'android'"  mat-list-icon>android</mat-icon>
+    <mat-icon *ngSwitchCase="'windows'" mat-list-icon>computer</mat-icon>
+    <mat-icon *ngSwitchCase="'ios'" mat-list-icon svgIcon="apple-ios"></mat-icon>
+    <mat-icon *ngSwitchDefault mat-list-icon>devices</mat-icon>
+  <h3 mat-line>{{Client.connectionId | truncate:[10, '...']}}</h3>
+  <h4 mat-line>{{Client.group | json}}</h4>
+</mat-list-item>

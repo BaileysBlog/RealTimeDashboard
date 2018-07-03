@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HubConnection, HubConnectionBuilder } from "@aspnet/signalr";
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Client } from '../Models/client.model';
 
 @Injectable({
   providedIn: 'root'
@@ -62,9 +63,9 @@ export class StatisticsService
     this.OnClientUpdate = this._ClientUpdate.asObservable();
   }
 
-  public GetClients(): Observable<any>
+  public GetClients(): Observable<Client[]>
   { 
-    return this.http.get('http://localhost:5000/api/client');
+    return this.http.get<Client[]>('http://localhost:5000/api/client');
   }
 
 

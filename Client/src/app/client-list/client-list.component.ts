@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StatisticsService } from '../Services/statistics.service';
+import { Client } from '../Models/client.model';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-client-list',
@@ -8,22 +10,28 @@ import { StatisticsService } from '../Services/statistics.service';
 })
 export class ClientListComponent implements OnInit {
 
-  clients = [];
+  clients: Client[] = [];
 
   constructor(public statsApi: StatisticsService)
   {
-    this.statsApi.OnClientUpdate.subscribe(_ =>
+    this.statsApi.OnClientUpdate.pipe(switchMap(x => { return this.statsApi.GetClients() })).subscribe(x =>
     {
-      this.LoadClients();
+      this.LoadClients(x);
     });
   }
 
-  private LoadClients(): void
+  private LoadClients(clients:Client[] = null): void
   { 
-    this.statsApi.GetClients().subscribe(data =>
-    {
-      this.clients = data;
-    });
+    if (clients != null)
+    { 
+      this.clients = clients;
+    } else
+    { 
+      this.statsApi.GetClients().subscribe(data =>
+      {
+        this.clients = data;
+      });
+    }
   }
 
   ngOnInit() 

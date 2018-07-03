@@ -15,6 +15,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ClientListComponent } from './client-list/client-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientItemComponent } from './ComponentPreviews/client-item/client-item.component';
+import { TruncatePipe } from './truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     MyNavComponent,
     CpuUsagePreviewComponent,
     NotFoundComponent,
-    ClientListComponent
+    ClientListComponent,
+    ClientItemComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
