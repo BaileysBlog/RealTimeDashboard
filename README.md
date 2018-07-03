@@ -1,13 +1,8 @@
-# Real Time Dashboard
+# Chat Group Dashboard
 I want to do something that involves WebSockets, .Net, Angular and has something of value.
-So I have decided that I'd create a dashboard that shows simple graphs and numbers in real-time from a .Net SignalR server.
-Dashboard Screen:
-- Server CPU usage on graph
-- Server Memory usage on graph
-- Number of connected WebSockets
-    - Number of other people also watching the statistics
-- Size of the database being used to store this information
-- Potentially other information from the database
+
+My final idea is to create something that allows a connected user to see all other connected users, their device types, and create groups. Once in a group users can send messages that will expire as the group does.
+
 
 ## Running Locally
 - Terminal A
@@ -19,19 +14,20 @@ Dashboard Screen:
 
 ## Current To-Do (General)
 - [x] Angular Dashboard Page
-- [ ] Angular Service for retrieving SignalR messages
-- [ ] SignalR Server 
+- [x] Angular Service for retrieving SignalR messages
+- [x] SignalR Server 
 ### To-Do (Client Side)
-- [ ] Cpu Usage
-- [ ] Memory Usage
-- [ ] Number of connected clients
-- [ ] Database Information
+- [x] Number of connected clients
+- [ ] Ability to show all connected users in more detail
+- [ ] Ability to select users and invite to group chat
+- [ ] Notification / Joining of groups
+- [ ] Sending messages
 ### To-Do (Server Side)
-- [ ] Retrieve Cpu Usage
-- [ ] Retrieve Memory Usage
-    - [ ] Max Allowed Ram 
-    - [ ] Current Ram usage
-- [ ] Database connection to store connected clients
-    - [ ] Methods of retrieving current client count
-- [ ] Retrieve information regarding database 
-    - [ ] Queries for returning information about database
+- [x] Number of connected clients
+- [ ] Api for getting detailed list of connected users
+- [ ] Api for creating groups
+- [ ] Api for sending group invitations
+- [ ] Api for joining groups
+- [ ] Api for sending messages inside groups
+- [ ] Process of expiring messages on group death
+    - [ ] Group death = Zero people in the group
