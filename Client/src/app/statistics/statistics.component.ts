@@ -13,9 +13,8 @@ export class StatisticsComponent {
     map(({ matches }) => {
         return [
           { title: 'Connected Clients', cols: 1, rows: 1 },
-          { title: 'Cpu Usage', cols: 1, rows: 1 },
-          { title: 'Memory Usage', cols: 1, rows: 1 },
-          { title: 'Database Information', cols: 1, rows: 1 }
+          { title: 'Groups', cols: 1, rows: 1 },
+          { title: 'My Group', cols: 2, rows: 1 },
         ];
     })
   );
