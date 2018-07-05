@@ -23,7 +23,7 @@ export class StatisticsService
     this.ConfigureEvents();
 
     this._Connection = new HubConnectionBuilder()
-      .withUrl('http://localhost:5000/main')
+      .withUrl('http://localhost/main')
       .build();
 
     this._Connection.start().then(() =>
@@ -65,7 +65,7 @@ export class StatisticsService
 
   public GetClients(): Observable<Client[]>
   { 
-    return this.http.get<Client[]>('http://localhost:5000/api/client');
+    return this.http.get<Client[]>('http://localhost/api/client');
   }
 
 
