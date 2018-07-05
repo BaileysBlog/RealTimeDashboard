@@ -51,8 +51,8 @@ namespace dashboardServer
             app.UseCors("CorsPolicy");
 
             app.UseMvc();
-
-            
+            app.UseDefaultFiles();
+            app.UseFileServer();
             app.UseSignalR(routes =>
             {
                 routes.MapHub<MainHub>("/main");
