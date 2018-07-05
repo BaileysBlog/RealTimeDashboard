@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ng-publish":"ng build --prod --output-path ../Server/dashboardServer/dashboardServer/wwwroot"
   },
   "private": true,
   "dependencies": {
